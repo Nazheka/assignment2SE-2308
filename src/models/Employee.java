@@ -26,12 +26,16 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
-    public double getSalary() {
+    @Override
+    public double getPaymentAmount() {
         return salary;
     }
+
 
     @Override
     public String toString() {
         return "Employee: " + super.toString();
     }
+
+
 }

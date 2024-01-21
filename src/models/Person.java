@@ -1,12 +1,15 @@
 package models;
 
 import interfaces.Payable;
+import java.util.List;
 
-public class Person implements Payable{
+public class Person implements Payable, Comparable<Person>{
     private final int id;
     private static int countId = 1;
     private String name;
     private String surname;
+
+    public static List<Person> people;
 
     public Person() {
         this.id = countId++;
@@ -51,4 +54,8 @@ public class Person implements Payable{
     public String getPosition() {
         return "Student";
     }
+    public int compareTo(Person person) {
+        return Double.compare(this.getPaymentAmount(), person.getPaymentAmount());
+    }
+
 }
